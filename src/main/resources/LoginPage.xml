@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="FREE CRM Application Test Automation Test Suite">
+<suite name="ApplicationX LoginPage Test Automation Test Suite">
 
 	<listeners>
 		<listener class-name="com.qa.ExtentReportListener.ExtentReporterNG" />
 	</listeners>
 
 
-	<test name="Free CRM App Test Cases">
+	<test name="LoginPage Test Cases">
 		<classes>
-			<class name="com.applicationx.qa.testcases.LoginPageTest"></class>
-
+			<class name="com.applicationx.qa.testcases.logintests.LoginPageTest"></class>
 		</classes>
 	</test>
 </suite>

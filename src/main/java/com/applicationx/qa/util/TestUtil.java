@@ -20,18 +20,23 @@ public class TestUtil extends TestBase {
 
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
-
-	public static String TESTDATA_SHEET_PATH = "/Users/naveenkhunteta/Documents/workspace"
-			+ "/FreeCRMTest/src/main/java/com/crm/qa/testdata/FreeCrmTestData.xlsx";
-
+	public static String TESTDATA_SHEET_PATH = "/Users/rodrigo.fontan/TestAutomation/WebApplicationX/src/main/java/com/applicationx/qa/testdata/ApplicationXTestData.xlsx";
+	public static final String USERNAME = "rodrigofontan1";
+	public static final String AUTOMATE_KEY = "qCPn5Snq381MaKLDrFES";
+	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
+	
+	
 	static Workbook book;
 	static Sheet sheet;
 	static JavascriptExecutor js;
 
+	
+	//Get Main framw by Switching
 	public void switchToFrame() {
 		driver.switchTo().frame("mainpanel");
 	}
 
+	//Get Test Data from a file
 	public static Object[][] getTestData(String sheetName) {
 		FileInputStream file = null;
 		try {
@@ -59,12 +64,14 @@ public class TestUtil extends TestBase {
 		return data;
 	}
 
+	//Take a screenshot
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String currentDir = System.getProperty("user.dir");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
 	}
 
+	//Add Run time info
 	public static void runTimeInfo(String messageType, String message) throws InterruptedException {
 		js = (JavascriptExecutor) driver;
 		// Check for jQuery on the page, add it if need be
@@ -99,5 +106,8 @@ public class TestUtil extends TestBase {
 //		js.executeScript("$.growl.warning({ title: 'Warning!', message: 'your warning message goes here' });");
 		Thread.sleep(5000);
 	}
+	
+	
+	
 
 }

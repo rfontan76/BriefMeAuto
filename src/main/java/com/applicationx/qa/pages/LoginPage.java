@@ -4,7 +4,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.applicationx.qa.base.TestBase;
 
 public class LoginPage extends TestBase{
@@ -24,6 +23,9 @@ public class LoginPage extends TestBase{
 	
 	@FindBy(xpath="//img[contains(@class,'img-responsive')]")
 	WebElement crmLogo;
+	
+	
+	
 	
 	//Initializing the Page Objects:
 	public LoginPage(){
@@ -48,5 +50,15 @@ public class LoginPage extends TestBase{
 		    	
 		return new HomePage();
 	}
+	
+	public boolean logInButtonDisplayed() {
+		return loginBtn.isDisplayed();
+	}
+	
+	public void clickLogin() {
+		loginBtn.click();
+	}
+	
+	
 	
 }

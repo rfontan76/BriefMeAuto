@@ -1,0 +1,10 @@
+com/applicationx/qa/pages/HomePage.class
+com/applicationx/qa/pages/TasksPage.class
+com/applicationx/qa/util/WebEventListener.class
+com/applicationx/qa/pages/SignUpPage.class
+com/applicationx/qa/pages/ContactsPage.class
+com/applicationx/qa/base/TestBase.class
+com/qa/ExtentReportListener/ExtentReporterNG.class
+com/applicationx/qa/pages/LoginPage.class
+com/applicationx/qa/pages/DealsPage.class
+com/applicationx/qa/util/TestUtil.class

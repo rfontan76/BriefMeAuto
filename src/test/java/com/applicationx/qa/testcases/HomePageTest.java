@@ -1,5 +1,5 @@
 package com.applicationx.qa.testcases;
-
+/*
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,8 +34,7 @@ public class HomePageTest extends TestBase {
 		loginPage = new LoginPage();
 		homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 	}
-	
-	
+		
 	@Test(priority=1)
 	public void verifyHomePageTitleTest(){
 		String homePageTitle = homePage.verifyHomePageTitle();
@@ -54,13 +53,24 @@ public class HomePageTest extends TestBase {
 		contactsPage = homePage.clickOnContactsLink();
 	}
 	
-	
-	
-	@AfterMethod
-	public void tearDown(){
-		driver.quit();
+	@Test(priority=4)
+	public void verifySignUpLink() {
+		Assert.assertTrue(homePage.verifySignUpLink(), "Unable to find SignUp Link");
 	}
 	
+	@Test(priority=5)
+	public void CRMLogoisDisplayed() {
+		Assert.assertTrue(homePage.CRMLogoisDisplayed(), "Unable to find CRM Logo");
+	}
 	
-
-}
+	@Test(priority=6)
+	public void CRMGetText() {
+		Assert.assertNotNull(homePage.CRMTestxt(), "not null");
+	}
+	
+	//Execute after the tests
+		@AfterMethod
+		public void tearDown(){
+			driver.quit();
+		}
+}*/
